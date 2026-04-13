@@ -42,7 +42,7 @@ export class App {
       duration: '30 min', 
       description: 'Reflexology-based treatment to restore balance and relieve tired feet.',
       longDescription: 'Experience the ancient art of reflexology. By applying pressure to specific points on the feet that correspond to different body organs, we help restore your natural energy flow and provide deep relaxation for tired soles.',
-      image: '/images/foot-rub.jpg'
+      image: 'assets/images/foot-rub.jpg?v=2'
     },
     { 
       name: 'Full Body Massage', 
@@ -58,7 +58,7 @@ export class App {
       duration: '60 min', 
       description: 'Intense pressure to release chronic muscle tension and knots.',
       longDescription: 'Designed for athletes or those with chronic pain. We use slow, deliberate strokes and deep finger pressure to reach the deeper layers of muscle and connective tissue, breaking down adhesions and improving mobility.',
-      image: '/images/deep-tissue.jpg'
+      image: 'assets/images/deep-tissue.jpg?v=2'
     },
     { 
       name: 'Hot Stone Ritual', 
