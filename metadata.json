@@ -1,0 +1,6 @@
+{
+  "name": "7 Tree Spa NY",
+  "description": "Professional massage and wellness spa in Brooklyn, NY specializing in back rubs, foot rubs, and therapeutic massage rituals.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": []
+}

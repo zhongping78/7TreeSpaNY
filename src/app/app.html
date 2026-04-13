@@ -1,0 +1,276 @@
+<div class="min-h-screen flex flex-col">
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-spa-cream/80 backdrop-blur-md border-b border-spa-olive/10">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <button class="flex items-center gap-2 cursor-pointer focus:outline-none" (click)="scrollTo('home')" aria-label="Go to home">
+        <span class="text-2xl font-serif font-bold tracking-tighter text-spa-olive">7 TREE SPA</span>
+        <span class="text-xs uppercase tracking-[0.3em] font-sans text-spa-olive/60 mt-1">NY</span>
+      </button>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-10">
+        <button (click)="scrollTo('home')" class="text-sm uppercase tracking-widest hover:text-spa-olive transition-colors">Home</button>
+        <button (click)="scrollTo('services')" class="text-sm uppercase tracking-widest hover:text-spa-olive transition-colors">Services</button>
+        <button (click)="scrollTo('about')" class="text-sm uppercase tracking-widest hover:text-spa-olive transition-colors">About</button>
+        <button (click)="scrollTo('contact')" class="text-sm uppercase tracking-widest hover:text-spa-olive transition-colors">Contact</button>
+        <a href="tel:3473155588" class="bg-spa-olive text-white px-6 py-2 rounded-full text-sm uppercase tracking-widest hover:bg-spa-olive/90 transition-all shadow-md flex items-center gap-2">
+          <mat-icon class="text-sm">phone</mat-icon>
+          Call Now
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="md:hidden text-spa-olive" (click)="toggleMenu()">
+        <mat-icon>{{ isMenuOpen() ? 'close' : 'menu' }}</mat-icon>
+      </button>
+    </div>
+
+    <!-- Mobile Nav -->
+    @if (isMenuOpen()) {
+      <div class="md:hidden bg-spa-cream border-b border-spa-olive/10 px-6 py-8 flex flex-col gap-6 animate-in fade-in slide-in-from-top-4 duration-300">
+        <button (click)="scrollTo('home')" class="text-lg font-serif text-left">Home</button>
+        <button (click)="scrollTo('services')" class="text-lg font-serif text-left">Services</button>
+        <button (click)="scrollTo('about')" class="text-lg font-serif text-left">About</button>
+        <button (click)="scrollTo('contact')" class="text-lg font-serif text-left">Contact</button>
+        <a href="tel:3473155588" class="bg-spa-olive text-white px-6 py-3 rounded-xl text-center font-serif text-lg">Call (347) 315-5588</a>
+      </div>
+    }
+  </nav>
+
+  <main class="flex-grow pt-20">
+    <!-- Hero Section -->
+    <section id="home" class="relative h-[90vh] flex items-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop" 
+          alt="Spa Atmosphere" 
+          class="w-full h-full object-cover brightness-75 scale-105 animate-pulse-slow"
+          referrerpolicy="no-referrer"
+        >
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 text-white">
+        <div class="max-w-2xl space-y-6">
+          <span class="inline-block text-xs uppercase tracking-[0.4em] font-sans opacity-80 border-b border-white/30 pb-2">Experience Pure Serenity</span>
+          <h1 class="text-6xl md:text-8xl font-serif leading-tight">Your Sanctuary in Brooklyn</h1>
+          <p class="text-lg md:text-xl font-sans opacity-90 leading-relaxed max-w-lg">
+            Dedicated to the relaxation of body and mind. Experience exclusive rituals and skilled therapy designed to wash away tension and restore your natural balance.
+          </p>
+          <div class="pt-4 flex flex-wrap gap-4">
+            <button (click)="scrollTo('services')" class="bg-white text-spa-ink px-8 py-4 rounded-full text-sm uppercase tracking-widest font-bold hover:bg-spa-cream transition-all shadow-xl">View Services</button>
+            <button (click)="scrollTo('contact')" class="border border-white/50 backdrop-blur-sm px-8 py-4 rounded-full text-sm uppercase tracking-widest font-bold hover:bg-white/10 transition-all">Find Us</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+        <div class="relative">
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+            <img 
+              src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1974&auto=format&fit=crop" 
+              alt="Massage Therapy" 
+              class="w-full h-full object-cover"
+              referrerpolicy="no-referrer"
+            >
+          </div>
+          <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-spa-olive rounded-2xl p-6 text-white flex flex-col justify-end shadow-xl hidden lg:flex">
+            <span class="text-4xl font-serif italic">10+</span>
+            <span class="text-xs uppercase tracking-widest opacity-80">Years of Excellence</span>
+          </div>
+        </div>
+        <div class="space-y-8">
+          <div class="space-y-2">
+            <span class="text-spa-olive text-sm uppercase tracking-widest font-bold">Our Philosophy</span>
+            <h2 class="text-4xl md:text-5xl font-serif text-spa-ink">Reflex and Relax</h2>
+          </div>
+          <p class="text-lg text-spa-ink/70 leading-relaxed">
+            Feel tight in your shoulder or lower back? Let us fix it for you. Our unique approach to massage therapy releases energy and improves circulation, contributing to overall well-being.
+          </p>
+          <p class="text-lg text-spa-ink/70 leading-relaxed">
+            We are dedicated to the relaxation of the body and mind. Our skilled therapists provide a careful selection of treatments that provide long-lasting benefits to your health, washing away tension and restoring your body's natural rhythm.
+          </p>
+          <div class="grid grid-cols-2 gap-8 pt-4">
+            <div class="space-y-2">
+              <mat-icon class="text-spa-olive">spa</mat-icon>
+              <h4 class="font-serif text-xl">Natural Healing</h4>
+              <p class="text-sm text-spa-ink/60">Holistic approach to wellness and recovery.</p>
+            </div>
+            <div class="space-y-2">
+              <mat-icon class="text-spa-olive">self_improvement</mat-icon>
+              <h4 class="font-serif text-xl">Expert Care</h4>
+              <p class="text-sm text-spa-ink/60">Certified therapists with years of experience.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-spa-cream">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+          <span class="text-spa-olive text-sm uppercase tracking-widest font-bold">Treatments & Pricing</span>
+          <h2 class="text-4xl md:text-5xl font-serif">Our Signature Services</h2>
+          <p class="text-spa-ink/60">Explore our range of therapeutic treatments designed for your ultimate relaxation.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          @for (service of services; track service.name) {
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-spa-olive/5 group">
+              <div class="flex justify-between items-start mb-6">
+                <div class="bg-spa-cream p-3 rounded-xl group-hover:bg-spa-olive group-hover:text-white transition-colors">
+                  <mat-icon>spa</mat-icon>
+                </div>
+                <div class="text-right">
+                  <span class="block text-2xl font-serif text-spa-olive">{{ service.price }}</span>
+                  <span class="text-xs uppercase tracking-widest text-spa-ink/40">{{ service.duration }}</span>
+                </div>
+              </div>
+              <h3 class="text-2xl font-serif mb-3">{{ service.name }}</h3>
+              <p class="text-spa-ink/60 text-sm leading-relaxed mb-6">
+                {{ service.description }}
+              </p>
+              <div class="pt-4 border-t border-spa-olive/10">
+                <button class="text-xs uppercase tracking-widest font-bold text-spa-olive hover:tracking-[0.2em] transition-all flex items-center gap-2">
+                  Learn More <mat-icon class="text-sm">arrow_forward</mat-icon>
+                </button>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-spa-ink text-white">
+      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+        <div class="space-y-12">
+          <div class="space-y-4">
+            <h2 class="text-4xl md:text-5xl font-serif">Visit Our Oasis</h2>
+            <p class="opacity-60 max-w-md">Located in the heart of Brooklyn, we're here to provide you with the ultimate escape from the city's hustle.</p>
+          </div>
+
+          <div class="space-y-8">
+            <div class="flex gap-6">
+              <div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center shrink-0">
+                <mat-icon>location_on</mat-icon>
+              </div>
+              <div>
+                <h4 class="font-serif text-xl mb-1">Location</h4>
+                <p class="opacity-60">3049 Brighton 6th St, CU4<br>Brooklyn, NY 11235</p>
+                <a href="https://www.google.com/maps/dir/Current+Location/3049%20Brighton%206th%20St,%20CU4%20Brooklyn,%20NY%2011235,%20USA" target="_blank" class="text-xs uppercase tracking-widest mt-2 inline-block border-b border-white/30 pb-1 hover:border-white transition-all">Get Directions</a>
+              </div>
+            </div>
+
+            <div class="flex gap-6">
+              <div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center shrink-0">
+                <mat-icon>schedule</mat-icon>
+              </div>
+              <div>
+                <h4 class="font-serif text-xl mb-1">Hours</h4>
+                <p class="opacity-60">Monday - Sunday<br>11:00 AM - 10:00 PM</p>
+              </div>
+            </div>
+
+            <div class="flex gap-6">
+              <div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center shrink-0">
+                <mat-icon>phone</mat-icon>
+              </div>
+              <div>
+                <h4 class="font-serif text-xl mb-1">Contact</h4>
+                <a href="tel:3473155588" class="text-2xl font-serif hover:text-spa-cream transition-colors">(347) 315-5588</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white/5 rounded-3xl p-8 md:p-12 border border-white/10">
+          <h3 class="text-3xl font-serif mb-8">Send us a Message</h3>
+          
+          @if (formStatus() === 'success') {
+            <div class="bg-spa-olive/20 border border-spa-olive text-white p-6 rounded-xl animate-in fade-in zoom-in duration-300">
+              <div class="flex items-center gap-4">
+                <mat-icon>check_circle</mat-icon>
+                <div>
+                  <h4 class="font-serif text-xl">Message Sent!</h4>
+                  <p class="text-sm opacity-80">Thank you for reaching out. We will get back to you shortly.</p>
+                </div>
+              </div>
+            </div>
+          } @else {
+            <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="space-y-6">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label for="name" class="text-xs uppercase tracking-widest opacity-60">Name</label>
+                  <input 
+                    id="name" 
+                    name="name"
+                    [(ngModel)]="contactData.name"
+                    required
+                    type="text" 
+                    class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:border-white transition-all"
+                  >
+                </div>
+                <div class="space-y-2">
+                  <label for="email" class="text-xs uppercase tracking-widest opacity-60">Email</label>
+                  <input 
+                    id="email" 
+                    name="email"
+                    [(ngModel)]="contactData.email"
+                    required
+                    email
+                    type="email" 
+                    class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:border-white transition-all"
+                  >
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label for="message" class="text-xs uppercase tracking-widest opacity-60">Message</label>
+                <textarea 
+                  id="message" 
+                  name="message"
+                  [(ngModel)]="contactData.message"
+                  required
+                  rows="4" 
+                  class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:border-white transition-all"
+                ></textarea>
+              </div>
+              
+              @if (formStatus() === 'error') {
+                <p class="text-red-400 text-sm">Something went wrong. Please try again or call us directly.</p>
+              }
+
+              <button 
+                type="submit" 
+                [disabled]="!contactForm.form.valid || formStatus() === 'submitting'"
+                class="w-full bg-white text-spa-ink py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-spa-cream transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+              >
+                @if (formStatus() === 'submitting') {
+                  <mat-icon class="animate-spin text-sm">sync</mat-icon>
+                }
+                {{ formStatus() === 'submitting' ? 'Sending...' : 'Send Message' }}
+              </button>
+            </form>
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-spa-ink border-t border-white/10 py-12 text-center text-white/40">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+      <div class="flex items-center gap-2">
+        <span class="text-xl font-serif font-bold tracking-tighter text-white">7 TREE SPA</span>
+        <span class="text-[10px] uppercase tracking-[0.3em] font-sans text-white/40 mt-1">NY</span>
+      </div>
+      <p class="text-sm">&copy; 2026 7 Tree Spa NY. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-white transition-colors"><mat-icon class="text-lg">facebook</mat-icon></a>
+        <a href="#" class="hover:text-white transition-colors"><mat-icon class="text-lg">camera_alt</mat-icon></a>
+      </div>
+    </div>
+  </footer>
+</div>
