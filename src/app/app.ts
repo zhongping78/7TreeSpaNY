@@ -34,7 +34,7 @@ export class App {
       duration: '30 min', 
       description: 'Focused massage targeting tension in the upper and lower back.',
       longDescription: 'Our signature back rub is designed for those who carry stress in their shoulders and lower back. Using a combination of Swedish and trigger point techniques, we release deep-seated knots and improve posture-related discomfort.',
-      image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=800&auto=format&fit=crop'
+      image: 'https://plus.unsplash.com/premium_photo-1661438442743-7a5d2f9f0aa5?q=80&w=800&auto=format&fit=crop'
     },
     { 
       name: 'Foot Rub', 
@@ -42,7 +42,7 @@ export class App {
       duration: '30 min', 
       description: 'Reflexology-based treatment to restore balance and relieve tired feet.',
       longDescription: 'Experience the ancient art of reflexology. By applying pressure to specific points on the feet that correspond to different body organs, we help restore your natural energy flow and provide deep relaxation for tired soles.',
-      image: 'assets/images/foot-rub.webp?v=4'
+      image: 'https://images.unsplash.com/photo-1706795033796-0057e5864e6d?q=80&w=800&auto=format&fit=crop'
     },
     { 
       name: 'Full Body Massage', 
@@ -58,7 +58,7 @@ export class App {
       duration: '60 min', 
       description: 'Intense pressure to release chronic muscle tension and knots.',
       longDescription: 'Designed for athletes or those with chronic pain. We use slow, deliberate strokes and deep finger pressure to reach the deeper layers of muscle and connective tissue, breaking down adhesions and improving mobility.',
-      image: 'assets/images/deep-tissue.jpg?v=4'
+      image: 'https://images.unsplash.com/photo-1741522509438-a120c0bb5e88?q=80&w=800&auto=format&fit=crop'
     },
     { 
       name: 'Hot Stone Ritual', 
