@@ -96,7 +96,7 @@ export class App {
 
   onSubmit() {
     if (this.formspreeId === 'YOUR_FORMSPREE_ID_HERE') {
-      alert('Please configure your Formspree ID in src/app/app.ts');
+      alert('Please configure your Formspree ID in src/app/app.ts'); 
       return;
     }
 
