@@ -29,53 +29,55 @@ export class App {
 
   services = [
     { 
-      name: 'Back Rub', 
-      price: '$45', 
-      duration: '30 min', 
-      description: 'Focused massage targeting tension in the upper and lower back.',
-      longDescription: 'Our signature back rub is designed for those who carry stress in their shoulders and lower back. Using a combination of Swedish and trigger point techniques, we release deep-seated knots and improve posture-related discomfort.',
-      image: 'https://plus.unsplash.com/premium_photo-1661438442743-7a5d2f9f0aa5?q=80&w=800&auto=format&fit=crop'
-    },
-    { 
-      name: 'Foot Rub', 
-      price: '$40', 
-      duration: '30 min', 
-      description: 'Reflexology-based treatment to restore balance and relieve tired feet.',
-      longDescription: 'Experience the ancient art of reflexology. By applying pressure to specific points on the feet that correspond to different body organs, we help restore your natural energy flow and provide deep relaxation for tired soles.',
-      image: 'https://images.unsplash.com/photo-1706795033796-0057e5864e6d?q=80&w=800&auto=format&fit=crop'
-    },
-    { 
-      name: 'Full Body Massage', 
-      price: '$80', 
-      duration: '60 min', 
-      description: 'Comprehensive therapeutic massage for total body relaxation.',
-      longDescription: 'A complete head-to-toe experience. This treatment uses long, flowing strokes to improve circulation, reduce muscle tension, and induce a state of profound peace. Perfect for a total reset of your nervous system.',
+      name: 'Body Work', 
+      category: 'Classic',
+      description: 'Our signature therapeutic massage designed to release tension and improve circulation throughout the body.',
+      longDescription: 'Feel tight in your shoulder or lower back? Our Body Work session uses a combination of Swedish and trigger point techniques to release deep-seated knots and improve posture-related discomfort. Perfect for a regular wellness ritual.',
+      tiers: [
+        { duration: '30 min', price: '$30' },
+        { duration: '60 min', price: '$40' },
+        { duration: '90 min', price: '$65' },
+        { duration: '120 min', price: '$80' },
+      ],
       image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop'
     },
     { 
-      name: 'Deep Tissue Massage', 
-      price: '$95', 
-      duration: '60 min', 
-      description: 'Intense pressure to release chronic muscle tension and knots.',
-      longDescription: 'Designed for athletes or those with chronic pain. We use slow, deliberate strokes and deep finger pressure to reach the deeper layers of muscle and connective tissue, breaking down adhesions and improving mobility.',
+      name: 'Deep Tissue', 
+      category: 'Advanced',
+      description: 'Intense pressure to reach deeper layers of muscle and connective tissue.',
+      longDescription: 'Designed for athletes or those with chronic pain. We use slow, deliberate strokes and deep finger pressure to break down adhesions, improve mobility, and target stubborn muscle knots that standard massages can\'t reach.',
+      tiers: [
+        { duration: '30 min', price: '$40' },
+        { duration: '60 min', price: '$50' },
+        { duration: '90 min', price: '$85' },
+        { duration: '120 min', price: '$100' },
+      ],
       image: 'https://images.unsplash.com/photo-1741522509438-a120c0bb5e88?q=80&w=800&auto=format&fit=crop'
     },
     { 
-      name: 'Hot Stone Ritual', 
-      price: '$110', 
-      duration: '75 min', 
-      description: 'Warm stones combined with massage to melt away stress.',
-      longDescription: 'Smooth, heated basalt stones are placed on key points of the body and used as an extension of the therapist\'s hands. The heat penetrates deep into the muscles, allowing for a deeper relaxation without intense pressure.',
-      image: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=800&auto=format&fit=crop'
+      name: 'Foot Reflexology', 
+      category: 'Traditional',
+      description: 'Ancient healing art focused on pressure points on the feet to restore balance.',
+      longDescription: 'Experience the restorative power of reflexology. By applying pressure to specific points on the feet that correspond to different body organs, we help restore your natural energy flow and provide deep relaxation for tired soles.',
+      tiers: [
+        { duration: '30 min', price: '$20' },
+        { duration: '60 min', price: '$30' },
+        { duration: '90 min', price: '$45' },
+        { duration: '120 min', price: '$60' },
+      ],
+      image: 'https://images.unsplash.com/photo-1706795033796-0057e5864e6d?q=80&w=800&auto=format&fit=crop'
     },
-    { 
-      name: 'Aromatherapy Session', 
-      price: '$90', 
-      duration: '60 min', 
-      description: 'Essential oils blended to enhance physical and emotional well-being.',
-      longDescription: 'Harness the power of nature. We use high-grade essential oils tailored to your specific needs—whether you need to be energized, calmed, or decongested. The scent and skin absorption work together for holistic healing.',
-      image: 'https://images.unsplash.com/photo-1602928321679-560bb453f190?q=80&w=800&auto=format&fit=crop'
-    },
+  ];
+
+  extraServices = [
+    { name: 'Cupping', price: '$20', icon: 'spa' },
+    { name: 'Scraping', price: '$20', icon: 'flare' },
+    { name: 'Ear Candle', price: '$30', icon: 'nights_stay' },
+    { name: 'Hot Stone', price: '$10', icon: 'texture' },
+  ];
+
+  combos = [
+    { name: 'Foot + Body Combo', description: '30 min Foot Reflexology + 30 min Body Work', price: '$45', icon: 'add_task' }
   ];
 
   toggleMenu() {

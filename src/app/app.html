@@ -68,11 +68,11 @@
     <section id="about" class="py-24 bg-white">
       <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
         <div class="relative">
-          <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-spa-cream/30 flex items-center justify-center">
             <img 
               src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1974&auto=format&fit=crop" 
               alt="Massage Therapy" 
-              class="w-full h-full object-cover"
+              class="w-full h-full object-contain"
               referrerpolicy="no-referrer"
             >
           </div>
@@ -117,7 +117,7 @@
           <p class="text-spa-ink/60">Explore our range of therapeutic treatments designed for your ultimate relaxation.</p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           @for (service of services; track service.name) {
             <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all border border-spa-olive/5 group overflow-hidden flex flex-col">
               <div class="p-8 flex-grow">
@@ -126,22 +126,30 @@
                     <mat-icon>spa</mat-icon>
                   </div>
                   <div class="text-right">
-                    <span class="block text-2xl font-serif text-spa-olive">{{ service.price }}</span>
-                    <span class="text-xs uppercase tracking-widest text-spa-ink/40">{{ service.duration }}</span>
+                    <span class="block text-xs uppercase tracking-widest text-spa-ink/40">{{ service.category }}</span>
                   </div>
                 </div>
                 <h3 class="text-2xl font-serif mb-3">{{ service.name }}</h3>
                 <p class="text-spa-ink/60 text-sm leading-relaxed mb-6">
                   {{ service.description }}
                 </p>
+
+                <div class="space-y-3 mb-8">
+                  @for (tier of service.tiers; track tier.duration) {
+                    <div class="flex justify-between items-center py-2 border-b border-spa-olive/5 last:border-0 hover:bg-spa-cream/30 px-2 rounded-lg transition-colors">
+                      <span class="text-sm font-sans text-spa-ink/80">{{ tier.duration }}</span>
+                      <span class="text-base font-serif font-bold text-spa-olive">{{ tier.price }}</span>
+                    </div>
+                  }
+                </div>
                 
                 @if (expandedService() === service.name) {
                   <div class="animate-in fade-in slide-in-from-top-2 duration-500 space-y-6">
-                    <div class="aspect-video rounded-xl overflow-hidden shadow-inner">
+                    <div class="rounded-xl overflow-hidden shadow-inner bg-spa-cream/50 flex justify-center">
                       <img 
                         [src]="service.image" 
                         [alt]="service.name" 
-                        class="w-full h-full object-cover"
+                        class="w-full h-auto max-h-[500px] object-contain block"
                         referrerpolicy="no-referrer"
                       >
                     </div>
@@ -165,6 +173,54 @@
               </div>
             </div>
           }
+        </div>
+
+        <!-- Extra Services & Combos -->
+        <div class="grid lg:grid-cols-2 gap-12">
+          <!-- Combos -->
+          <div class="space-y-8">
+            <h3 class="text-3xl font-serif text-spa-ink flex items-center gap-3">
+              <mat-icon class="text-spa-olive">auto_awesome</mat-icon>
+              Our Best Value Combos
+            </h3>
+            <div class="space-y-4">
+              @for (combo of combos; track combo.name) {
+                <div class="bg-white p-6 rounded-2xl border border-spa-olive/10 shadow-sm flex items-center justify-between group hover:border-spa-olive transition-all">
+                  <div class="flex gap-4 items-center">
+                    <div class="w-12 h-12 bg-spa-cream rounded-full flex items-center justify-center text-spa-olive group-hover:bg-spa-olive group-hover:text-white transition-all">
+                      <mat-icon>{{ combo.icon }}</mat-icon>
+                    </div>
+                    <div>
+                      <h4 class="font-serif text-xl">{{ combo.name }}</h4>
+                      <p class="text-sm text-spa-ink/50">{{ combo.description }}</p>
+                    </div>
+                  </div>
+                  <div class="text-2xl font-serif text-spa-olive font-bold">
+                    {{ combo.price }}
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+
+          <!-- Add-ons -->
+          <div class="space-y-8">
+            <h3 class="text-3xl font-serif text-spa-ink flex items-center gap-3">
+              <mat-icon class="text-spa-olive">add_circle_outline</mat-icon>
+              Enhance Your Experience
+            </h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              @for (addon of extraServices; track addon.name) {
+                <div class="bg-white p-5 rounded-2xl border border-spa-olive/5 shadow-sm flex items-center justify-between hover:shadow-md transition-all">
+                  <div class="flex items-center gap-3">
+                    <mat-icon class="text-spa-olive/40 text-lg">{{ addon.icon }}</mat-icon>
+                    <span class="font-serif text-lg">{{ addon.name }}</span>
+                  </div>
+                  <span class="font-bold text-spa-olive bg-spa-cream px-3 py-1 rounded-full text-sm">{{ addon.price }}</span>
+                </div>
+              }
+            </div>
+          </div>
         </div>
       </div>
     </section>
